@@ -26,16 +26,19 @@ function Sidebar() {
 
    const handleRange = (_range) => {
 
-      let new_arr = [...myState.values];
-      for(let i = 0; i < new_arr.length; i++)
-         document.getElementById(i).style.transform = `translateX(${i*11}px)`;
+      // let new_arr = [...myState.values];
 
-      resetColor();
+      // not necessary***
+      // for(let i = 0; i < new_arr.length; i++)
+      //    document.getElementById(i).style.transform = `translateX(${i*11}px)`;
+
+      // resetColor();
       
       dispatch({
          type: 'UPDATE_RANGE',
          range: _range
       })
+      
       // dispatch({
       //    type:'CHANGE_VALUES'
       // })
@@ -114,7 +117,7 @@ function Sidebar() {
             disabled={myState.play? true: false}
             max={max}
             onChange = {(e) => handleRange(e.target.value)}
-            valueLabelDisplay="auto"
+            valueLabelDisplay="auto" // will show 30 on slider when you take cursor there
          />
       </div>
 

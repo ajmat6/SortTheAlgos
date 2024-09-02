@@ -8,13 +8,14 @@ const SelectionSort = () =>{
    let values = myState.values.map((item) => item[0]);
    let ids = myState.values.map((item) => item[1]);
 
+   console.log(ids)
+   console.log(values)
+
    const solve = () => {
       let n = values.length;
-
       for(let i = 0; i < n; i++){
-
          setTimeout(() => {
-         let ind = i;
+         let ind = i; // ind is used to track the minimum element index for the current iteration:
          for(let j = i; j < n; j++){
             if(values[ind] > values[j])
                ind = j;
@@ -39,18 +40,18 @@ const SelectionSort = () =>{
          },i*myState.speed*3);
       }
 
-      setTimeout(() => {
-         dispatch({
-            type:'PLAY_PAUSE',
-            _play:false
-         })
+      // setTimeout(() => {
+      //    dispatch({
+      //       type:'PLAY_PAUSE',
+      //       _play:false
+      //    })
 
-         dispatch({
-            type:'UPDATE_COLOR',
-            color: 'rgb(0, 182, 0)'
-         })
+      //    dispatch({
+      //       type:'UPDATE_COLOR',
+      //       color: 'rgb(0, 182, 0)'
+      //    })
 
-      },(myState.speed*3*n)+50);
+      // },(myState.speed*3*n)+50);
    };
 
    useEffect(() => {

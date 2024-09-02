@@ -9,8 +9,8 @@ const InsertionSort = () =>{
    let ids = myState.values.map((item) => item[1]);
    let timer = 0;
    let total_time = 0;
+   
    let timing_map = new Map();
-
    for(let i = 0; i < values.length; i++){
       let j = i+1;
       while(j>0 && values[j]<values[j-1]){
@@ -43,6 +43,8 @@ const InsertionSort = () =>{
                ids[j-1] = temp;
 
                let new_ids = [...ids];
+
+               console.log("insertion sort ", ids);
                
                setTimeout(() => {
                   
@@ -51,7 +53,7 @@ const InsertionSort = () =>{
                   
                   setTimeout(() => {
                      document.getElementById(new_ids[j-1]).childNodes[1].style.backgroundColor = myState.color;
-                  },myState.speed-10);
+                  },myState.speed - 10);
                   
                   document.getElementById(new_ids[j-1]).style.transform = `translateX(${(j-1)*11}px)`;  
                },timer*myState.speed);
