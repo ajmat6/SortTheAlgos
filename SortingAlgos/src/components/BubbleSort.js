@@ -9,7 +9,6 @@ const BubbleSort = () =>{
    let ids = myState.values.map((item) => item[1]);
    
    const solve = () => {
-      
       for(let i = values.length,timer = 0; i > 0;timer += i-1, i--){
          setTimeout(() => {
             for(let j = 1; j < i; j++){
@@ -32,14 +31,11 @@ const BubbleSort = () =>{
                      ids[j-1] = temp;
                      
                      document.getElementById(ids[j]).style.transform = `translateX(${j*11}px)`;
-                     
-                     document.getElementById(ids[j-1]).style.transform = `translateX(${(j-1)*11}px)`;
-                        
+                     document.getElementById(ids[j-1]).style.transform = `translateX(${(j-1)*11}px)`;   
                   }
                },(j-1)*(myState.speed));
             }
-         }
-         ,(timer)*(myState.speed))
+         },(timer)*(myState.speed))
       }
       
       setTimeout(() => {
@@ -53,7 +49,7 @@ const BubbleSort = () =>{
             color: 'rgb(0, 182, 0)'
          })
 
-      },(((myState.values.length-1)*(myState.values.length))/2)*myState.speed+50);
+      },(((myState.values.length-1)*(myState.values.length))/2)*myState.speed+50); // the time it will take to complete sort depends upon the length of the array and also the speed
    }
    
    useEffect(() => {

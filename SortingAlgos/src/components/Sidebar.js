@@ -26,22 +26,22 @@ function Sidebar() {
 
    const handleRange = (_range) => {
 
-      // let new_arr = [...myState.values];
+      let new_arr = [...myState.values];
 
       // not necessary***
-      // for(let i = 0; i < new_arr.length; i++)
-      //    document.getElementById(i).style.transform = `translateX(${i*11}px)`;
+      for(let i = 0; i < new_arr.length; i++)
+         document.getElementById(i).style.transform = `translateX(${i*11}px)`;
 
-      // resetColor();
+      resetColor();
       
       dispatch({
          type: 'UPDATE_RANGE',
          range: _range
       })
-      
-      // dispatch({
-      //    type:'CHANGE_VALUES'
-      // })
+
+      dispatch({
+         type:'CHANGE_VALUES'
+      })
    }
 
    const handleColor = (_color) => {

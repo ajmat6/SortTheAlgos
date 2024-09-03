@@ -25,17 +25,20 @@ const MergeSort = () => {
          for(let i = l; i <= r; i++)
             document.getElementById(ids[i]).childNodes[1].style.backgroundColor = `rgb(${color[0]},${color[1]},${color[2]})`;
 
-         for(let i = l; i <= r; i++){
-         for(let j = i+1; j <= r; j++){
+         for(let i = l; i <= r; i++) {
+            for(let j = i+1; j <= r; j++){
+               if(values[i]>values[j]){
+                  let temp = values[i];
+                  values[i] = values[j];
+                  values[j] = temp;
 
-            if(values[i]>values[j]){
-               [values[i],values[j]] = [values[j],values[i]];
-               [ids[i],ids[j]] = [ids[j],ids[i]];
-               
-               let new_ids = [...ids];
-
-               document.getElementById(new_ids[i]).style.transform = `translateX(${i*11}px)`;
-               document.getElementById(new_ids[j]).style.transform = `translateX(${j*11}px)`;
+                  temp = ids[i];
+                  ids[i] = ids[j];
+                  ids[j] = temp;
+                  
+                  // let new_ids = [...ids];
+                  document.getElementById(ids[i]).style.transform = `translateX(${i*11}px)`;
+                  document.getElementById(ids[j]).style.transform = `translateX(${j*11}px)`;
                }
             }
          }
